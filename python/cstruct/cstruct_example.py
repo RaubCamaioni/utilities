@@ -21,9 +21,7 @@ if __name__ == "__main__":
     from time import time
     
     # create header struct    
-    header = Header(b"Hello World", 
-                    time(), 
-                    69)    
+    header = Header(b"Hello World", time(), 69)    
     header_bytes = header.to_bytes()
     
     print(f"originial:{header}")
@@ -32,8 +30,7 @@ if __name__ == "__main__":
     
     # create message type with header struct
     header.timestamp = time()
-    messageA = MessageTypeA(*header,
-                            b"MessageA")
+    messageA = MessageTypeA(*header, b"MessageA")
     messageA_bytes = messageA.to_bytes()
     
     print(f"originial:{messageA}")
